@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom MAYE-LASSERRE - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics (Optional) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+    -->
+</head>
+
+<body>
+    <header>
+        <h1>Tom MAYE-LASSERRE</h1>
+        <nav>
+            <a href="#contact">Contact</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><strong>Mail:</strong> <a
+                    href="mailto:tommayelasserre@eleves.ec-nantes.fr">tommayelasserre@eleves.ec-nantes.fr</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tommaye-lasserre-88b178245"
+                    target="_blank">Tom's
+                    LinkedIn</a></li>
+            <li><strong>GitHub:</strong> <a href="https://www.github.com/TomMayeLasserre" target="_blank">Tom's
+                    GitHub</a></li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I’m a French student in Mathematics and Artificial Intelligence.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            <li><a href="#project1">Chess Vision AI</a></li>
+            <li><a href="#project2">VIT for Biomedical</a></li>
+            <li><a href="#project3">Self Learning Chess</a></li>
+            <!-- Add more projects as needed -->
+        </ul>
+
+        <!-- Project 1 -->
+        <div class="project" id="project1">
+            <h3>Project 1: Chess Vision AI</h3>
+            <p>
+                Computer vision to detect chess pieces on a chessboard to analyze the position on a device using
+                Stockfish
+                (until I develop my own chess engine). Works on pictures and in real-time on video, displaying the
+                evaluation
+                and best move on the same image.
+            </p>
+            <div class="demo-images">
+                <img src="images/project1/image1.jpg" alt="Chess Vision AI Demo 1">
+                <img src="images/project1/image2.jpg" alt="Chess Vision AI Demo 2">
+            </div>
+            <h4>Algorithm Idea:</h4>
+            <ol>
+                <li><strong>Corner Detection:</strong> Identify the four corners of the chessboard.</li>
+                <img src="images/project1/corner_detection.jpg" alt="Corner Detection">
+                <li><strong>Piece Detection:</strong> Recognize pieces and their bounding boxes.</li>
+                <img src="images/project1/piece_detection.jpg" alt="Piece Detection">
+                <li><strong>Calculate Coordinates:</strong> Obtain center coordinates for each detected piece.</li>
+                <img src="images/project1/coordinates.jpg" alt="Coordinates Calculation">
+                <li><strong>Homography Transformation:</strong> Transform the board to a top-down view using the
+                    detected corners.</li>
+                <img src="images/project1/homography.jpg" alt="Homography Transformation">
+                <li><strong>Board Orientation:</strong> Ensure correct board orientation by matching colors and
+                    identifying king locations.</li>
+                <li><strong>Square Mapping and FEN Positioning:</strong> Convert piece positions into FEN notation.</li>
+                <li><strong>Move Analysis:</strong> Display current board position and run it through Stockfish to find
+                    the best move.</li>
+            </ol>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project" id="project2">
+            <h3>Project 2: VIT for Biomedical</h3>
+            <h4>Graph Neural Representations of Mammographic Images for Explainable Breast Cancer Detection</h4>
+            <p>
+                A deep learning framework that integrates graphs with Vision Transformers to generate an efficient
+                classifier
+                for breast mammography images cancer from the InBreast dataset and its location.
+            </p>
+            <p><strong>Dataset Used:</strong> InBreast</p>
+            <div class="demo-images">
+                <img src="images/project2/dataset.jpg" alt="InBreast Dataset">
+            </div>
+            <p>
+                The idea is to divide the image into patches, creating a graph. Graphs are used in medical image
+                analysis
+                to represent spatial relationships between image pixels. Each tile is transformed into a feature using
+                CNN,
+                then these features are related and understood through a transformer to localize and connect the tiles
+                and identify cancer. This approach improves explainability and accuracy.
+            </p>
+            <h4>Enhanced Interpretability</h4>
+            <p>Comparison with standard models: ResNet, AlexNet, etc.</p>
+            <p>Future Potential: Extend to other medical imaging tasks.</p>
+            <h4>Results:</h4>
+            <div class="demo-images">
+                <img src="images/project2/results.jpg" alt="Results">
+            </div>
+            <p><strong>Keywords:</strong> Mammographic images, graph convolutional network, vision transformer, deep
+                learning, breast cancer.</p>
+            <p>Most projects can be seen on my <a href="https://github.com/yourgithub" target="_blank">GitHub</a>.</p>
+        </div>
+
+        <!-- Add more projects similarly -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tom MAYE-LASSERRE. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
