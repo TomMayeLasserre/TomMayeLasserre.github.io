@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tom MAYE-LASSERRE - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Analytics (Optional) -->
+    <!-- Google Analytics-->
     <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
     <script>
@@ -22,43 +22,306 @@
     <header>
         <h1>Tom MAYE-LASSERRE</h1>
         <nav>
-            <a href="#contact">Contact</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <a href="mailto:tommayelasserre@eleves.ec-nantes.fr" target="_blank">Email</a> |
+            <a href="https://www.linkedin.com/in/tommaye-lasserre-88b178245" target="_blank">LinkedIn</a> |
+            <a href="https://www.github.com/TomMayeLasserre" target="_blank">GitHub</a>
         </nav>
     </header>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <ul>
-            <li><strong>Mail:</strong> <a
-                    href="mailto:tommayelasserre@eleves.ec-nantes.fr">tommayelasserre@eleves.ec-nantes.fr</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tommaye-lasserre-88b178245"
-                    target="_blank">Tom's LinkedIn</a></li>
-            <li><strong>GitHub:</strong> <a href="https://www.github.com/TomMayeLasserre" target="_blank">Tom's
-                    GitHub</a></li>
-        </ul>
-    </section>
-
     <section id="about" class="section">
         <h2>About Me</h2>
-        <p>I’m a French student in Mathematics and Artificial Intelligence.</p>
+        <p>Final year. I am a French student in Mathematics and Artificial Intelligence. Want to work in AI for
+            medecine. Intrested in LLM, computer vision and RL</p>
     </section>
 
     <section id="projects" class="section">
         <h2>Projects</h2>
         <div class="project-navigation">
             <div id="project-buttons" class="buttons">
-                <!-- Project buttons will be dynamically inserted here -->
+                <button data-project="project1" class="active">Project 1: Chess Vision AI</button>
+                <button data-project="project2">Project 2: Deep learning for mammographic images</button>
+                <button data-project="project3">Project 3: Neutral Chatbot</button>
+                <button data-project="project4">Project 4: Time Fusion Transformers</button>
+                <button data-project="project5">Project 5: Self Learning Chess</button>
+                <button data-project="project7">Project 7: Estimating Battery Life</button>
+                <button data-project="project6">Project 6: Re-Implementing Neural Networks</button>
+                <button data-project="project8">Project 8: Video game </button>
             </div>
             <div id="projects-container" class="projects-container">
-                <!-- Project details will be dynamically inserted here -->
+                <!-- Project 1: Chess Vision AI -->
+                <div id="project1" class="project active">
+                    <h3>Chess Vision AI</h3>
+                    <h4>Computer vision to detect chess pieces on a chessboard</h4>
+                    <p>
+                        Computer vision to detect chess pieces on a chessboard to analyze the position on a device using
+                        Stockfish (until I develop my own chess engine). Works on pictures and in real-time on video,
+                        displaying the evaluation and best move on the same image.
+                    </p>
+
+                    <div class="demo-images-row">
+                        <img src="images/project1/image1.png" alt="Chess Vision AI Demo 1" class="demo-image"
+                            loading="lazy">
+                        <img src="images/project1/image2.png" alt="Chess Vision AI Demo 2" class="demo-image"
+                            loading="lazy">
+                    </div>
+
+                    <!-- Algorithm Explanation -->
+                    <h4>Algorithm Idea:</h4>
+                    <ol>
+                        <li><strong>Corner Detection:</strong> Identify the four corners of the chessboard.</li>
+                        <li><strong>Piece Detection:</strong> Recognize pieces and their bounding boxes.</li>
+                        <li><strong>Calculate Coordinates:</strong> Obtain center coordinates for each detected piece.
+                        </li>
+                        <li><strong>Homography Transformation:</strong> Transform the board to a top-down view using the
+                            detected corners.</li>
+                        <li><strong>Board Orientation:</strong> Ensure correct board orientation by matching colors and
+                            identifying king locations.</li>
+                        <li><strong>Square Mapping and FEN Positioning:</strong> Convert piece positions into FEN
+                            notation.</li>
+                        <li><strong>Move Analysis:</strong> Display current board position and run it through Stockfish
+                            to find the best move.</li>
+                    </ol>
+
+                    <div class="algorithm-images-row">
+                        <div class="algorithm-image-container">
+                            <img src="images/project1/corner_detection.png" alt="Corner Detection"
+                                class="algorithm-image" loading="lazy">
+                            <p class="image-description">1. Identifying the corners of the chess board.</p>
+                        </div>
+                        <div class="algorithm-image-container">
+                            <img src="images/project1/piece_detection.png" alt="Piece Detection" class="algorithm-image"
+                                loading="lazy">
+                            <p class="image-description">2. Detecting and locating chess pieces.</p>
+                        </div>
+                        <div class="algorithm-image-container">
+                            <img src="images/project1/coordinates.png" alt="Coordinates Calculation"
+                                class="algorithm-image" loading="lazy">
+                            <p class="image-description">3. Calculation of center coordinates of detected pieces</p>
+                        </div>
+                        <div class="algorithm-image-container">
+                            <img src="images/project1/homography.png" alt="Homography Transformation"
+                                class="algorithm-image" loading="lazy">
+                            <p class="image-description">4. Homographic transformation.</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Keywords:</strong> Computer Vision, Chess AI, Stockfish, Real-time Analysis.</p>
+                </div>
+
+                <!-- Project 2: VIT for Biomedical -->
+                <div id="project2" class="project">
+                    <h3>Deep learning for mammographic images</h3>
+                    <h4>Graph transformers for mammographic images for explainable breast cancer detection</h4>
+                    <p>
+                        A deep learning framework that integrates graphs with Vision Transformers to generate an
+                        efficient classifier for breast mammography images cancer from the InBreast dataset and its
+                        location.
+                    </p>
+                    <p><strong>Dataset Used:</strong> InBreast</p>
+                    <div class="demo-images-row">
+                        <img src="images/project2/dataset.png" alt="Dataset InBreast" class="dataset" loading="lazy">
+                    </div>
+                    <h4>Details:</h4>
+                    <p>
+                        The idea is to divide the image into patches, creating a graph. Graphs are used in medical image
+                        analysis to represent spatial relationships between image pixels. Each tile is transformed into
+                        a feature using a CNN, then these features are related and understood through a transformer to
+                        localize and connect the tiles and identify cancer. This approach improves explainability and
+                        accuracy.
+                    </p>
+                    <p><strong>Comparison with Standard Models:</strong> ResNet, AlexNet, etc.</p>
+                    <p><strong>Future Potential:</strong> Extend to other medical imaging tasks.</p>
+                    <h4>Results:</h4>
+                    <div class="demo-images-row">
+                        <img src="images/project2/results.png" alt="Results VIT for Biomedical" class="results"
+                            loading="lazy">
+                    </div>
+                    <p><strong>Keywords:</strong> Mammographic Images, Graph Convolutional Network, Vision Transformer,
+                        Deep Learning, Breast Cancer.</p>
+                </div>
+
+                <!-- Project 3: Neutral Chatbot -->
+                <div id="project3" class="project">
+                    <h3>Neutral Chatbot for French Elections</h3>
+                    <h4>Helping French citizens understand political parties for 2022 elections</h4>
+                    <p>
+                        Using a pre-trained Large Language Model (LLM) and implementing Retrieval-Augmented Generation
+                        (RAG) from scratch to retrieve information from a dataset of official documents related to
+                        French political life. Ensures neutral and verified information.
+                    </p>
+                    <div class="demo-images-row">
+                        <img src="images/project3/rag.png" alt="Neutral Chatbot Demo 1" class="demo-image"
+                            loading="lazy">
+                    </div>
+                    <p><strong>Keywords:</strong> LLM, RAG, Neutral Information, French Politics, AI Chatbot.</p>
+                </div>
+
+                <!-- Project 4: Time Fusion Transformers -->
+                <div id="project4" class="project">
+                    <h3>Time Fusion Transformers for Classification</h3>
+                    <h4>Time series classifier using time fusion transformers</h4>
+                    <p>
+                        Developed a time series classifier utilizing Time Fusion Transformers, achieving better results
+                        compared to LSTMs and simple transformers, with applications in finance.
+                    </p>
+                    <p>
+                        I implemented this model because I have been working extensively on multivariate time series
+                        classification/forecasting, but basic methods like LSTMs are usually limited.
+                    </p>
+                    <h4>How It Works:</h4>
+                    <p>
+                        Time Fusion Transformers integrate temporal feature interactions and provide interoperability by
+                        allowing us to see which features were more important.
+                    </p>
+                    <p>
+                        I then applied this model in a finance competition to predict [specific task], and I finished
+                        4th place, demonstrating its relevance.
+                    </p>
+                    <div class="demo-images-row">
+                        <img src="images/project4/finance_curve.png" alt="Finance Curve" class="demo-image"
+                            loading="lazy">
+                        <img src="images/project4/probabilities.png" alt="Feature Probabilities" class="demo-image"
+                            loading="lazy">
+                    </div>
+                    <p><strong>Keywords:</strong> Time Series, Transformers, LSTM, Financial Forecasting, Feature
+                        Importance.</p>
+                </div>
+
+                <!-- Project 5: Self Learning Chess -->
+                <div id="project5" class="project">
+                    <h3>Self Learning Chess Imitating AlphaZero</h3>
+                    <p>
+                        A neural network that learns to play chess from scratch using reinforcement learning by playing
+                        against itself, inspired by AlphaZero.
+                    </p>
+                    <h4>Learning Process:</h4>
+                    <ol>
+                        <li><strong>Self-Play:</strong> The AI plays against itself, generating games where each
+                            position and its outcome (win, lose, draw) are stored.</li>
+                        <li><strong>Monte Carlo Tree Search (MCTS):</strong> Uses the network’s predictions to explore
+                            promising moves.</li>
+                        <li><strong>UCB Formula in MCTS:</strong> Balances exploration and exploitation:
+                            <br><code>UCB = Q(s, a) + c_puct * P(s, a) * sqrt(N(s)) / (1 + N(s, a))</code>
+                            <br>
+                            <small>Where:</small>
+                            <ul>
+                                <li><code>Q(s, a)</code>: Average value of action a from state s.</li>
+                                <li><code>P(s, a)</code>: Prior probability of action a from the network.</li>
+                                <li><code>N(s)</code>: Total visit count of the parent node.</li>
+                                <li><code>N(s, a)</code>: Visit count of the child node for action a.</li>
+                                <li><code>c_puct</code>: A constant controlling exploration.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Training Targets:</strong>
+                            <ul>
+                                <li><strong>Policy Target:</strong> <code>π(a|s)</code> - Improved move probabilities
+                                    from MCTS.</li>
+                                <li><strong>Value Target:</strong> <code>z</code> - Game outcome (+1 for win, 0 for
+                                    draw, -1 for loss).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Loss Function:</strong>
+                            <ul>
+                                <li><strong>Policy Loss:</strong> Cross-entropy between MCTS probabilities and network
+                                    predictions:
+                                    <br><code>L_policy = -Σ[π(a|s) * log(π̂(a|s))]</code>
+                                </li>
+                                <li><strong>Value Loss:</strong> Mean squared error between predicted value and actual
+                                    outcome:
+                                    <br><code>L_value = (z - v̂(s))²</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Total Loss:</strong> <code>L = L_policy + L_value</code></li>
+                    </ol>
+                    <div class="demo-images-row">
+                        <img src="images/project5/mcts.png" alt="AlphaZero MCTS" class="demo-image" loading="lazy">
+                    </div>
+                    <p><strong>Keywords:</strong> Reinforcement Learning, Self-Play, Chess AI, Strategy Optimization.
+                    </p>
+                </div>
+                <!-- Project 6: Re-Implementing Neural Networks -->
+                <div id="project6" class="project">
+                    <h3>Re-Implementing Neural Networks from Scratch</h3>
+                    <h4>Understanding the Core of AI by Building Neural Networks from the Ground Up</h4>
+                    <p>
+                        Before using any AI frameworks, I believe it's essential to understand the fundamentals. This
+                        project involves re-implementing Recurrent Neural Networks (RNN), Convolutional Neural Networks
+                        (CNN), and Transformer architectures from scratch.
+                    </p>
+                    <div class="algorithm-images-row">
+                        <div class="algorithm-image-container">
+                            <img src="images/project6/rnn.png" alt="RNN Architecture" class="algorithm-image"
+                                loading="lazy">
+                            <p class="image-description">Recurrent Neural Network (RNN) Architecture.</p>
+                        </div>
+                        <div class="algorithm-image-container">
+                            <img src="images/project6/cnn.jpg" alt="CNN Architecture" class="algorithm-image"
+                                loading="lazy">
+                            <p class="image-description">Convolutional Neural Network (CNN) Architecture.</p>
+                        </div>
+                        <div class="algorithm-image-container">
+                            <img src="images/project6/transformers.png" alt="Transformer Architecture"
+                                class="algorithm-image" loading="lazy">
+                            <p class="image-description">Transformer Architecture.</p>
+                        </div>
+                    </div>
+                    <p><strong>Keywords:</strong> Neural Networks, RNN, CNN, Transformers, AI Fundamentals.</p>
+                </div>
+
+
+                <!-- Project 7: Estimating Battery Life -->
+                <div id="project7" class="project">
+                    <h3>Estimating Battery Life Using EKF and Neural Networks</h3>
+                    <h4>Predicting the Health and Lifespan of Proton-Exchange Membrane Fuel Cells (PEMFCs)</h4>
+                    <p>
+                        Developed a hybrid approach combining Extended Kalman Filter (EKF) with Long Short-Term Memory
+                        (LSTM) neural networks to predict the output voltage and internal aging parameters of
+                        Proton-Exchange Membrane Fuel Cells (PEMFCs). This enables improved lifespan and health
+                        management.
+                    </p>
+                    <h4>Objective:</h4>
+                    <p>
+                        Develop a method to predict the state of health and remaining lifespan of PEMFCs, aiding
+                        researchers in improving fuel cell longevity.
+                    </p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Combines EKF for parameter estimation with LSTM for dynamic voltage prediction.</li>
+                        <li>Provides accurate predictions under static, quasi-dynamic, and dynamic conditions.</li>
+                    </ul>
+                    <h4>Methodology:</h4>
+                    <ol>
+                        <li><strong>Training Phase:</strong> EKF extracts aging parameters; LSTM learns voltage trends.
+                        </li>
+                        <li><strong>Prediction Phase:</strong> Hybrid EKF-LSTM predicts both voltage and aging under
+                            dynamic loads.</li>
+                    </ol>
+                    <h4>Results:</h4>
+                    <div class="demo-images-row">
+                        <img src="images/project7/forecasting.png" alt="Forecasting Curves" class="results"
+                            loading="lazy">
+                    </div>
+                    <p>
+                        Achieved high accuracy with RMSE &lt; 0.0317 under dynamic conditions, outperforming traditional
+                        model-based and data-driven methods. Enables proactive maintenance and extends fuel cell
+                        lifespan.
+                    </p>
+                    <p><strong>Keywords:</strong> EKF, LSTM, Battery Health, PEMFC, Voltage Prediction.</p>
+                </div>
+
+                <!-- Project 8: [Jeu vidéeo] -->
+                <div id="project8" class="project">
+                </div>
+
             </div>
         </div>
+        <p>Most projects can be viewed on my <a href="https://github.com/yourgithub/project1"
+                target="_blank">GitHub</a>.</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Tom MAYE-LASSERRE. All rights reserved.</p>
+        <p> 2025 Tom MAYE-LASSERRE</p>
     </footer>
 
     <script src="scripts.js"></script>
