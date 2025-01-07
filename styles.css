@@ -7,7 +7,7 @@
 
 /* Dézoom pour contrer le zoom de github */
 html {
-    zoom: 0.7;
+    zoom: 0.1;
 }
 
 /* General Styles */
